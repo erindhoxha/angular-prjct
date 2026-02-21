@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DUMMY_USERS } from '../mocks/dummy-users';
 
 @Component({
   selector: 'app-user',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
-  users = [{ name: 'John Doe' }, { name: 'Jane Doe' }, { name: 'Jack Doe' }];
+  users = DUMMY_USERS;
+  selectedUser: (typeof DUMMY_USERS)[number] = DUMMY_USERS[0];
+
+  selectUser(user: (typeof DUMMY_USERS)[number]) {
+    this.selectedUser = user;
+  }
 }
