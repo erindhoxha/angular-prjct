@@ -14,6 +14,10 @@ export class UserComponent {
   public users = DUMMY_USERS;
   public selectedUser = DUMMY_USERS[randomIndex];
 
+  get imagePath() {
+    return this.selectedUser.avatar;
+  }
+
   public selectUser(user: (typeof DUMMY_USERS)[number]) {
     this.selectedUser = user;
   }
