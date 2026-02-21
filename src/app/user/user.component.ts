@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { DUMMY_USERS } from '../mocks/dummy-users';
 
+const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -9,10 +11,10 @@ import { DUMMY_USERS } from '../mocks/dummy-users';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
-  users = DUMMY_USERS;
-  selectedUser: (typeof DUMMY_USERS)[number] = DUMMY_USERS[0];
+  public users = DUMMY_USERS;
+  public selectedUser = DUMMY_USERS[randomIndex];
 
-  selectUser(user: (typeof DUMMY_USERS)[number]) {
+  public selectUser(user: (typeof DUMMY_USERS)[number]) {
     this.selectedUser = user;
   }
 }
