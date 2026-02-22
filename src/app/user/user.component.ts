@@ -18,7 +18,8 @@ export class UserComponent {
     return this.selectedUser.avatar;
   }
 
-  public selectUser(user: (typeof DUMMY_USERS)[number]) {
-    this.selectedUser = user;
+  public selectUser() {
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+    this.selectedUser = DUMMY_USERS[randomIndex];
   }
 }
